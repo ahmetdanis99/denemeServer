@@ -1,19 +1,3 @@
-const dgram = require("dgram");
-const server = dgram.createSocket("udp4");
-
-server.on("error", (err) => {
-  console.log(`server error:\n${err.stack}`);
-  server.close();
-});
-
-server.on("message", (msg, senderInfo) => {
-  console.log("Messages received " + msg);
-  server.send(msg, senderInfo.port, senderInfo.address, () => {
-    console.log(`Message sent to ${senderInfo.address}:${senderInfo.port}`);
-  });
-});
-server.on("listening", () => {
-  const address = server.address();
-  console.log(`server listening on ${address.address}:${address.port}`);
-});
-server.bind(5500);
+version https://git-lfs.github.com/spec/v1
+oid sha256:12a24414b4172fc3784979c9fb19c1e0c958b55cb6a1142d5c286f7c3a7be1d3
+size 1604
